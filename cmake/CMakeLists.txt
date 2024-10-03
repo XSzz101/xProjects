@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.1.3)
+
+project(tripstime CXX)
+
+set(ROOT ${CMAKE_CURRENT_SOURCE_DIR}/../)
+
+message(${ROOT})
+
+set(CMAKE_CXX_FLAGS "$ENV{CMAKE_CXX_FLAGS} -Wall -g -std=c++17 -fPIC -D_GLIBCXX_USE_CXX11_ABI=0 -U__STRICT_ANSI__ -D__ARMEL__ -DTHIRDPARTY_UPDATE_PARTI_ON")
+
+add_executable(tripstime ${ROOT}/src/main.cpp)
+
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_INSTALL_PREFIX}/bin/)
+set(LIBRARY_OUTPUT_PATH ${CMAKE_INSTALL_PREFIX}/lib/)
+set(INCLUDE_OUTPUT_PATH ${CMAKE_INSTALL_PREFIX}/include/)
+
+install(TARGETS tripstime DESTINATION ${EXECUTABLE_OUTPUT_PATH})
